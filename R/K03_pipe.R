@@ -69,7 +69,7 @@ us_data %>% names()
 
 #1@
 
-# __ %>% __
+us_data %>% nrow()
 
 #@1
 
@@ -114,9 +114,9 @@ us_data %>% names()
 # 'names()' on it, AND THEN see those names in a new tab by applying the
 # function 'view()' to the result of 'us_data %>% names()':
 
-# us_data %>%
-#   names() %>%
-#   view()
+us_data %>%
+  names() %>%
+  view()
 
 # The alternative:
 
