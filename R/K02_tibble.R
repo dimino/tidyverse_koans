@@ -75,11 +75,11 @@ us_data <- tibble(
 
 #1@
 
-# canada_data <- tibble(
-#   year      = __,
-#   gdpPercap = __,
-#   lifeExp   = __
-# )
+canada_data <- tibble(
+  year      = c(1957, 1977, 1997),
+  gdpPercap = c(12490, 22091, 28955),
+  lifeExp   = c(70.0, 74.2, 78.0)
+)
 
 # canada_data
 
@@ -138,7 +138,7 @@ nrow(us_data)
 
 #2@
 
-# ncol(us_data) == __
+ncol(us_data) == 3
 
 #@2
 
@@ -160,7 +160,7 @@ nrow(us_data)
 
 #3@
 
-# names(us_data) == c("year", "gdpPercap", __)
+names(us_data) == c("year", "gdpPercap", "lifeExp")
 
 #@3
 
@@ -177,12 +177,12 @@ nrow(us_data)
 
 #4@
 
-# add_row(
-#   canada_data,
-#   year = __,
-#   gdpPercap = __,
-#   lifeExp = __
-# )
+add_row(
+  canada_data,
+  year = 2007,
+  gdpPercap = 36319,
+  lifeExp = 80.7
+)
 
 #@4
 
