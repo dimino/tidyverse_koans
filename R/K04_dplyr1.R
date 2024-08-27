@@ -68,8 +68,7 @@ library(gapminder)
 # our tibble by some logical condition, like "continent is equal to Europe".
 # This gives us all the rows (observations) that have Europe as the continent.
 
-gapminder %>%
-  filter(continent == "Europe")
+gapminder %>% filter(continent == "Europe")
 
 # You can filter on more than one logical condition at a time. This will
 # return a tibble with all the gapminder observations from Asia in the year
@@ -87,7 +86,7 @@ gapminder %>%
 
 #1@
 
-# __
+gapminder %>% filter(continent == "Europe", year == 2007)
 
 #@1
 
@@ -96,7 +95,7 @@ gapminder %>%
 
 #2@
 
-# __
+gapminder %>% filter(lifeExp == 68)
 
 #@2
 
@@ -115,8 +114,8 @@ gapminder %>%
 
 #3@
 
-# gapminder %>%
-#   filter(continent == __, gdpPercap __ 30000)
+gapminder %>%
+  filter(continent == "Asia", gdpPercap > 30000)
 
 #@3
 
@@ -125,8 +124,8 @@ gapminder %>%
 
 #4@
 
-# gapminder %>%
-#   filter(country __ c("United States", "Germany", "Brazil"))
+gapminder %>%
+  filter(country %in% c("United States", "Germany", "Brazil"))
 
 #@4
 
@@ -144,8 +143,8 @@ gapminder %>%
 
 #5@
 
-# gapminder %>%
-#   select(__, __, __)
+gapminder %>%
+  select(lifeExp, pop, gdpPercap)
 
 #@5
 
@@ -170,9 +169,9 @@ gapminder %>%
 # 'pop' and 'gdpPercap'. I've piped it into 'view()' so you can verify that
 # it worked.
 
-# gapminder %>%
-#   mutate(total_gdp = pop*gdpPercap) %>%
-#   view()
+gapminder %>%
+  mutate(total_gdp = pop*gdpPercap) %>%
+  view()
 
 # 6. Use 'mutate()' to create a new variable 'pop_in_thousands'. ---------------
 # So if the observation has 'pop' = 97,462, then 'pop_in_thousands' will be
@@ -180,8 +179,8 @@ gapminder %>%
 
 #6@
 
-# gapminder %>%
-#   mutate(__)
+gapminder %>%
+  mutate(pop_in_thousands = pop/1000)
 
 #@6
 
