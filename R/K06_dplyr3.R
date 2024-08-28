@@ -44,7 +44,9 @@ gapminder %>%
 
 #1@
 
-# __
+gapminder %>%
+  filter(continent=="Asia") %>%
+  arrange(lifeExp)
 
 #@1
 
@@ -53,7 +55,9 @@ gapminder %>%
 
 #2@
 
-# __
+gapminder %>%
+  filter(continent=="Asia") %>%
+  arrange(desc(lifeExp))
 
 #@2
 
@@ -85,7 +89,8 @@ gapminder %>%
 
 #3@
 
-# __
+gapminder %>%
+  slice(853:864)
 
 #@3
 
@@ -106,7 +111,10 @@ gapminder %>%
 
 #4@
 
-# __
+gapminder %>%
+  filter(continent=="Asia") %>%
+  arrange(desc(lifeExp)) %>%
+  slice_head(n = 5)
 
 #@4
 
@@ -115,7 +123,10 @@ gapminder %>%
 
 #5@
 
-# __
+gapminder %>%
+  group_by(continent) %>%
+  arrange(desc(lifeExp)) %>%
+  slice(1)
 
 #@5
 

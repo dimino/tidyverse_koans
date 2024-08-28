@@ -72,8 +72,8 @@ people %>%
 
 #1@
 
-# people %>%
-#   filter(str_detect(__, __) | str_detect(__, __))
+people %>%
+  filter(str_detect(name, "Charles") | str_detect(name, "Dimino"))
 
 #@1
 
@@ -81,9 +81,9 @@ people %>%
 
 #2@
 
-# people %>%
-#   filter(__) %>%
-#   select(__)
+people %>%
+  filter(str_detect(name, "Daniel Dumire")) %>%
+  select(license_id)
 
 #@2
 
@@ -98,8 +98,8 @@ people %>%
 
 #3@
 
-# drivers_license %>%
-#   filter(id == __)
+drivers_license %>%
+  filter(id == 953663)
 
 #@3
 
@@ -113,9 +113,13 @@ people %>%
 
 #4@
 
-# __
+people %>%
+  filter(str_detect(name, "Bennett Jimmerson")) %>%
+  pull(ssn) -> bennett_ssn
 
-# __
+income %>%
+  filter(ssn==bennett_ssn) %>%
+  select(annual_income)
 
 #@4
 
@@ -151,8 +155,8 @@ people %>%
 
 #5@
 
-# __ %>%
-#  __(__, by = "ssn")
+people %>%
+  left_join(income, by = "ssn")
 
 #@5
 
@@ -161,7 +165,10 @@ people %>%
 
 #6@
 
-# __
+people %>%
+  left_join(income, by = "ssn") %>%
+  filter(name == "Daniel Dumire") %>%
+  select(annual_income)
 
 #@6
 
@@ -173,7 +180,9 @@ people %>%
 
 #7@
 
-# __
+drivers_license %>%
+  left_join(people, by = c("id" = "license_id")) %>%
+  left_join(income, by = "ssn")
 
 #@7
 

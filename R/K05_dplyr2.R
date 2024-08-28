@@ -45,8 +45,7 @@ gapminder %>%
 
 #1@
 
-# gapminder %>%
-# __
+gapminder %>% summarize(lifeExp_med=median(lifeExp), pop_med=median(pop), gdpPercap_med=median(gdpPercap))
 
 #@1
 
@@ -56,8 +55,9 @@ gapminder %>%
 
 #2@
 
-# gapminder %>%
-# __
+gapminder %>%
+  mutate(total_gdp=pop*gdpPercap) %>%
+  summarize(totalGdp_mean=mean(total_gdp), totalGdp_med=median(total_gdp))
 
 #@2
 
@@ -113,8 +113,10 @@ gapminder %>%
 
 #3@
 
-# gapminder %>%
-# __
+gapminder %>%
+  filter(continent=="Africa") %>%
+  group_by(country) %>%
+  summarize(lifeExp_med=median(lifeExp), pop_med=median(pop), gdpPercap_med=median(gdpPercap))
 
 #@3
 
@@ -124,8 +126,9 @@ gapminder %>%
 
 #4@
 
-# gapminder %>%
-# __
+gapminder %>%
+  group_by(continent, year) %>%
+  summarize(gdpPercap_mean=mean(gdpPercap))
 
 #@4
 
@@ -175,8 +178,8 @@ gapminder %>%
 
 #5@
 
-# gapminder %>%
-# __
+gapminder %>%
+  count(country)
 
 #@5
 
